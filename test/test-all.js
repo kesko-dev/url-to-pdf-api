@@ -14,6 +14,9 @@ BPromise.config({
   longStackTraces: true,
 });
 
+// Allow HTTP for tests
+config.ALLOW_HTTP = true;
+
 const app = createApp();
 
 function normalisePdfText(text) {
