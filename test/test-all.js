@@ -7,6 +7,7 @@ const BPromise = require('bluebird');
 const { getResource } = require('./util');
 const pdf = require('pdf-parse');
 const createApp = require('../src/app');
+const config = require('../src/config');
 
 const DEBUG = false;
 
