@@ -1,0 +1,6 @@
+dependencies:
+- name: common
+  repository: oci://europe-north1-docker.pkg.dev/prj-zzzz-d-cloudmig-10001/library-charts
+  version: 0.1.0
+digest: sha256:b64f2eb05235e92e0ccaa8b902e3c80479df37df7f3b7df93452f26dd00388b0
+generated: "2021-11-22T10:02:01.841817+02:00"

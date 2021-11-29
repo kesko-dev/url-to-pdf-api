@@ -1,0 +1,18 @@
+keskoProjectId: "url-to-pdf-api"
+
+image:
+  repository: ""
+  tag: ""
+
+container:
+  port: 9000
+
+env:
+  ALLOW_HTTP: true
+  API_TOKENS: "secret"
+
+vault:
+  enabled: false
+
+ingress:
+  enabled: false

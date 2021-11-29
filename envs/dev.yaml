@@ -1,0 +1,18 @@
+image:
+  repository: europe-north1-docker.pkg.dev/prj-zzzz-d-cloudmig-10001/url-to-pdf-api/api
+
+env:
+  ALLOW_HTTP: false
+  API_TOKENS:
+    vaultSecret:
+      path: "secret/data/url-to-pdf-api/manual"
+      key: "api_token"
+
+vault:
+  enabled: true
+  address: https://vault.cloud.keskodev.zone
+
+ingress:
+  enabled: true
+  tls: true
+  host: "url-to-pdf-api.cloud.keskodev.zone"
