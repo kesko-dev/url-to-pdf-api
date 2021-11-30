@@ -39,14 +39,13 @@ jobs:
       - name: Install Buildpack
         uses: buildpacks/github-actions/setup-pack@v4.1.0
 
-      - name: Build and push the image
-        run: >-
-          pack build
-          ${{ steps.secrets.outputs.DOCKER_REPOSITORY_URL }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-          --builder=heroku/buildpacks:20
-          -e NODE_ENV="production"
-          -e NPM_TOKEN="${{ steps.secrets.outputs.NPM_TOKEN }}"
-          --publish
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          build-args: NPM_TOKEN=${{ steps.secrets.outputs.NPM_TOKEN }}
+          tags: ${{ steps.secrets.outputs.DOCKER_REPOSITORY_URL }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          push: true
 
   deploy-dev:
     name: "Deploy API to development"
