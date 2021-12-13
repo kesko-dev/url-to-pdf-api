@@ -41,11 +41,13 @@ jobs:
             secret/data/shared/npm npm_token | NPM_TOKEN ;
             secret/data/shared/gcp region | GCP_REGION ;
 
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@master
+      - name: Login to GCP
+        uses: google-github-actions/auth@v0
         with:
-          service_account_key: ${{ steps.secrets.outputs.GCP_SA_KEY }}
-          export_default_credentials: true
+          credentials_json: ${{ steps.secrets.outputs.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.3.0
 
       - name: Login to Artifact Registry
         run: gcloud auth configure-docker ${{ steps.secrets.outputs.GCP_REGION }}-docker.pkg.dev
@@ -84,11 +86,13 @@ jobs:
             secret/data/shared/gcp project_id | GCP_PROJECT_ID ;
             secret/data/shared/gcp region | GCP_REGION ;
 
-      - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@master
+      - name: Login to GCP
+        uses: google-github-actions/auth@v0
         with:
-          service_account_key: ${{ steps.secrets.outputs.GCP_SA_KEY }}
-          export_default_credentials: true
+          credentials_json: ${{ steps.secrets.outputs.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.3.0
 
       - name: Get GKE credentials
         run: >-
