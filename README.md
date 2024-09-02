@@ -270,5 +270,5 @@ First, clone the repository and cd into it.
 * Node 18
 * [Express.js](https://expressjs.com/) app with a nice internal architecture, based on [these conventions](https://github.com/kimmobrunfeldt/express-example).
 * Hapi-style Joi validation with [express-validation](https://github.com/andrewkeig/express-validation)
-* Heroku + buildpacks: [heroku-buildpack-google-chrome](https://github.com/heroku/heroku-buildpack-google-chrome.git), [heroku-buildpack-nodejs](http://github.com/heroku/heroku-buildpack-nodejs.git) [heroku-buildpack-converter-fonts](https://github.com/debitoor/heroku-buildpack-converter-fonts)
+* Heroku + buildpacks: [heroku-buildpack-chrome-for-testing](https://github.com/heroku/heroku-buildpack-chrome-for-testing), [heroku-buildpack-nodejs](http://github.com/heroku/heroku-buildpack-nodejs.git) [heroku-buildpack-converter-fonts](https://github.com/debitoor/heroku-buildpack-converter-fonts)
 * [Puppeteer](https://github.com/GoogleChrome/puppeteer) to control Chrome
