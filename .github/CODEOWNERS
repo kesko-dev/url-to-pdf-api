@@ -1,0 +1,6 @@
+* @kesko-dev/k-ruoka-mobiili
+
+# This is to make sure renovate does not require reviews from the team
+# Renovate PRs will be reviewed by fire chief
+package.json
+yarn.lock
